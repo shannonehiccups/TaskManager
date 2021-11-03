@@ -1,46 +1,45 @@
-// TASK MANAGER 
+const menu = `TASK MANAGER
 
-const menu=`TASK MANAGER 
-
-What would you like to do (Please enter one of the options below):
-"TASKS"-Display all tasks
-"NEW"-Add A New Task
+What would you like to do (Please enter one on the options below:)
+"TASKS"- Display all tasks
+"NEW"- Add a New Task
 "REMOVE"- Remove a Task
-"CLOSE"- Close the task manager
+"CLOSE"- Close the Task Manager
 `; 
 
-// Array for storing tasks 
+// Array for storing tasks
 const tasks = [
     `Charge Macbook`, 
-    `Master JavaScript`
-];
+    `Master Javascript`
+]; 
 
-// for displaying tasks to the user (empty string)
-let showTasks = ``; 
+// for displaying tasks to the user 
+let showTasks =``; 
 
-// Displays the menu for the user to select an option. Sets the user's response to the userInput variable
-let userInput =prompt(menu);
+// for storing the value of the new task
+let newTask; 
 
-// Loops and continues to display the menu until the user ends/closes the task manager-AKA enters `close`
-while (userInput !== `CLOSE`){
+// for storing the number of the task to remove 
+let num; 
 
-    // checks to see if user entered TASKS 
-    // if (userInput ===`TASKS`){
-    //     // The for of loop is used here to concatenate each task in the tasks array to the showTasks string variable 
-    //     for (task of tasks) {
-    //         // runs this code for each item of the array, /n is used to creat a new line after each task, 
-    //         showTasks = showTasks +`${task}\n';
-    //     }
-    //     alert (showTasks);
-    //     // Sets the value of showTasks back to an empty string 
-    //     showTasks= ""; 
-    // }
+// displays the menu for the user to select an option and sets the users response to the userInput variable
+let userInput = prompt (menu); 
 
-    if  (userInput === `NEW`){
-        let newTask = prompt(`Please enter the new task:`); 
+// loops and continues to display the menu until the user ends/closes the Task Manager 
+
+while (userInput ===`TASKS`){
+    if (userInput ===`TASKS`){
+        for(task of tasks){
+            showTasks += `${task}\n`;
+        }
+        alert (showTasks);
+        showTasks = ""; 
     }
-    userInput = prompt(menu);
-    };
-
-// Alerts the user that they have closed the program
-alert(`Thank you for using Task Manager`);
+    if (userInput === "NEW"){
+        newTask = prompt (`Please enter the new task:`);
+        alert (`"${newTask}" has been added!`);
+        tasks.
+    }
+    userInput = prompt(menu); 
+}
+alert (`Thank you for using the Task Manager`); 
